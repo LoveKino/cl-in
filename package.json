@@ -1,7 +1,7 @@
 {
   "name": "cl-in",
   "version": "0.0.1",
-  "description": "",
+  "description": "Pattern For Object",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register test/**/*.js"
