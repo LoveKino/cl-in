@@ -23,7 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/LoveKino/cl-in.git"
   },
-  "keywords": [],
+  "keywords": [
+    "pattern",
+    "json",
+    "object"
+  ],
   "author": "ddchen",
   "license": "MIT"
 }
