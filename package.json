@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha --compilers js:babel-core/register test/**/*.js"
   },
-  "dependencies":{
-    "babel-polyfill": "*"
+  "dependencies": {
+    "cl-jsoneq": "*"
   },
   "devDependencies": {
     "mocha": "*",
@@ -16,14 +16,14 @@
     "babel-cli": "*",
     "babel-core": "*",
     "babel-preset-es2015": "*",
-    "babel-preset-stage-0": "*"
+    "babel-preset-stage-0": "*",
+    "babel-polyfill": "*"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LoveKino/cl-in.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "ddchen",
   "license": "MIT"
 }
