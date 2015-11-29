@@ -5,10 +5,7 @@ import jsonEq from 'cl-jsoneq';
 describe('com', () => {
     it('obj:base', () => {
         let f = clin.obj([
-            clin.pair(
-                v => typeof v === 'string',
-                v => v > 10
-            )
+            (k, v) => typeof k === 'string' && v > 10
         ]);
 
         assert.equal(f({}), true);
@@ -90,5 +87,33 @@ describe('com', () => {
         assert.equal(f([11, 23, 20]), true);
         assert.equal(f([11, 30]), true);
         assert.equal(f([11, 23, 20, 50]), false);
+    });
+
+    it('com', () => {
+        let f = clin.obj([
+            clin.pair(
+                v => jsonEq(v, 'a'),
+                clin.arr([
+                    clin.obj([
+                        clin.pair(
+                            v => jsonEq(v, 'c'),
+                            v => typeof v === 'number')
+                    ])
+                ], len => len < 3)
+            ),
+            clin.pair(
+                v => jsonEq(v, 'b'),
+                v => typeof v === 'string'
+            )
+        ], (list) => jsonEq(list, ['a', 'b'], {
+            order: false
+        }));
+
+        assert.equal(f({
+            a: [{
+                c: 2
+            }],
+            b: "124"
+        }), true);
     });
 });
